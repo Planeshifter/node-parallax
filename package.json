@@ -1,0 +1,23 @@
+{
+  "name": "parallax",
+  "version": "0.1.0",
+  "description": "simple parallel execution via child_processes",
+  "main": "supervisor.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Planeshifter/node-parallax.git"
+  },
+  "keywords": [
+    "multi-threaded",
+    "parallel"
+  ],
+  "author": "Philipp Burckhardt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Planeshifter/node-parallax/issues"
+  },
+  "homepage": "https://github.com/Planeshifter/node-parallax"
+}
