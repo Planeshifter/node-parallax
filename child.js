@@ -1,11 +1,13 @@
 var child = {};
+var path  = require("path");
 
 process.on("message", function(msg){
   switch(msg.type){
     case "require":
       for (var key in msg.dependencies){
         if (msg.dependencies.hasOwnProperty(key)){
-          child[key] = require(__dirname + "/" + msg.dependencies[key]);
+          var dir = path.resolve( process.cwd() + "/" + msg.dependencies[key] );
+          child[key] = require(dir);
         }
       }
     break;

@@ -1,6 +1,5 @@
 var child_process = require("child_process");
 var numCPUs = require("os").cpus().length;
-var seq = require("./seq.js");
 
 var Supervisor = function(data, dependencies, opts){
   var self = this;
@@ -8,7 +7,7 @@ var Supervisor = function(data, dependencies, opts){
   this.available = [];
   this.err = null;
   this.callback = null;
-  this.numWorkers = Math.min(data.length, numCPUs - 1);
+  this.numWorkers = Math.min(data.length, opts.CPUs) || Math.min(data.length, numCPUs - 1);
   this.dependencies = {};
   this.data = data;
 
