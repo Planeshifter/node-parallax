@@ -8,6 +8,7 @@ var Supervisor = function(data, dependencies, opts){
   this.err = null;
   this.callback = null;
   this.numWorkers = Math.min(data.length, opts.CPUs) || Math.min(data.length, numCPUs - 1);
+  this.progress = opts.progress;
   this.dependencies = {};
   this.data = data;
 
@@ -16,6 +17,7 @@ var Supervisor = function(data, dependencies, opts){
     for (var i = 0; i < self.numWorkers; i++){
       self.workers[i].id = i;
       self.workers[i].on("message", function(msg){
+        console.log("Doc " + self.it + " processed");
         self.available.push(this.id);
         _updateData(msg.key, msg.value);
         _process();
