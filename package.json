@@ -2,7 +2,7 @@
   "name": "parallax",
   "version": "0.1.0",
   "description": "simple parallel execution via child_processes",
-  "main": "supervisor.js",
+  "main": "./lib/supervisor.js",
   "scripts": {
     "test": "mocha test"
   },
